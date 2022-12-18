@@ -23,7 +23,7 @@ library(ggplot2)
 library(tm)
 library(RTextTools)
 
-#setwd("C:/Users/Lennart/Documents/Studium/applications_PhD/Utrecht/SocialMedia/presentation")
+#setwd("C:/Users/Lennart/Documents/GitHub/Utrecht_SocialMediaAnalysis")
 
 #set up Googles' YouTube API
 app_id <- 'Your-YT_API-Client-ID' 
@@ -329,7 +329,7 @@ row.names(precision_train) <- c("0, Bigram: No Ad", "1, Bigram: Ad")
 
 ####### N-Grams
 #Creation of n-gram matrix, with n-gram = 2 
-#Bigram works best for English (see https://thibaut-deveraux.medium.com/how-to-create-a-bag-of-words-embedding-in-r-e609095ebf53)
+#Bigram works best for English (Thibaut, 2021)
 matrix_bi <- create_matrix(training_hidden$description, language = "English", 
                            minDocFreq = 1, minWordLength = 1, ngramLength = 2, toLower = T)
 
@@ -434,5 +434,15 @@ all <- out_p %>%
 
 #write.csv(comb_sub, "./undisclosed_ads_YT.csv", row.names = F)
 
+
+
+
+
+
+############################################# Rerferences ###################################################################
+
+## Swart, M., Lopez, Y., Mathur, A., & Chetty, M. (2020, April). Is this an ad?: Automatically disclosing online endorsements on youtube with adintuition. In Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems (pp. 1-12).
+
+## Thibaut. (2021). How to create a Bag of Words embedding in R? [Blog Post]. Retrieved from https://thibaut-deveraux.medium.com/how-to-create-a-bag-of-words-embedding-in-r-e609095ebf53
 
 
